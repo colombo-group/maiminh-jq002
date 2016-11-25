@@ -1,5 +1,5 @@
 var visibleThumbnail = true;
-var visibleDot = true;
+var visibleDot = false;
 
 $(document).ready(function () {
   var width = 850;
@@ -24,11 +24,22 @@ $(document).ready(function () {
       $slideContainer.css("transform", "translateX(" + (currentWidth) + "px)");
     }
 
-    dotted();
+    if (visibleDot) {
+      dotted();
+    }
+    else {
+      $dots.css('display','none');
+    }
     if (visibleThumbnail) {
       hoverNextSlide();
     }
   }
+  function invisibleDots() {
+    if(!visibleDot) {
+      $dots.css('display','none');
+    }
+  }
+  invisibleDots();
   function prevSlide() {
     currentSlide--;
     if (currentSlide < $slidesFirstchild) {
@@ -49,6 +60,9 @@ $(document).ready(function () {
      */
     if (visibleDot) {
       dotted();
+    }
+    else {
+
     }
     if (visibleThumbnail) {
       hoverPrevSlide();
