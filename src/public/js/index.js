@@ -1,5 +1,5 @@
 var visibleThumbnail = true;
-var visibleDot = false;
+var visibleDot = true;
 
 $(document).ready(function () {
   var width = 850;
